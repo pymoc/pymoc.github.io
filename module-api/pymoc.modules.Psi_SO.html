@@ -35,9 +35,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pymoc.modules.Psi_Thermwind" href="pymoc.modules.Psi_Thermwind.html" />
-    <link rel="prev" title="pymoc.modules.Equi_Column" href="pymoc.modules.Equi_Column.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,17 +79,10 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model-physics.html">Model Physics</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../module-api.html">Module API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pymoc.modules.Column.html">pymoc.modules.Column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pymoc.modules.Equi_Column.html">pymoc.modules.Equi_Column</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pymoc.modules.Psi_SO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pymoc.modules.Psi_Thermwind.html">pymoc.modules.Psi_Thermwind</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pymoc.modules.SO_ML.html">pymoc.modules.SO_ML</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../module-api.html">Module API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model-utils-api.html">Model Utils API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
@@ -140,8 +131,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../module-api.html">Module API</a> &raquo;</li>
-        
       <li>pymoc.modules.Psi_SO</li>
     
     
@@ -163,220 +152,6 @@
             
   <div class="section" id="pymoc-modules-psi-so">
 <h1>pymoc.modules.Psi_SO<a class="headerlink" href="#pymoc-modules-psi-so" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="pymoc.modules.Psi_SO">
-<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Psi_SO</code><span class="sig-paren">(</span><em class="sig-param">z=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">b=None</em>, <em class="sig-param">bs=None</em>, <em class="sig-param">tau=None</em>, <em class="sig-param">f=0.00012</em>, <em class="sig-param">rho=1030</em>, <em class="sig-param">L=10000000.0</em>, <em class="sig-param">KGM=1000.0</em>, <em class="sig-param">c=None</em>, <em class="sig-param">bvp_with_Ek=False</em>, <em class="sig-param">Hsill=None</em>, <em class="sig-param">HEk=None</em>, <em class="sig-param">Htapertop=None</em>, <em class="sig-param">Htaperbot=None</em>, <em class="sig-param">smax=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO" title="Permalink to this definition">¶</a></dt>
-<dd><p>Southern Ocean Overturning Trasport Model</p>
-<p>A 1D model of the Southern Ocean overturning transport,
-calculated based on a density profile in the adjoining basin,
-and local surface buoyancy and surface wind stress in the SO.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of overturning grid. Units: m</p></li>
-<li><p><strong>y</strong> (<em>ndarray</em>) – Meridional overturning grid. Units: m</p></li>
-<li><p><strong>b</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical buoyancy profile from the adjoining basin, on the north
-side of the ACC. Units: m/s<sup>2</sup></p></li>
-<li><p><strong>bs</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Surface level buoyancy boundary condition. Can be a constant,
-or an array or function in y. Units: m/s<sup>2</sup></p></li>
-<li><p><strong>tau</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Surface wind stress. Can be a constant, or an array or function
-in y. Units: N/m<sup>2</sup></p></li>
-<li><p><strong>f</strong> (<em>float</em>) – Coriolis parameter. Units s<sup>-1</sup></p></li>
-<li><p><strong>rho</strong> (<em>float</em>) – Density of sea water for Boussinesq approximation. Units: kg/m<sup>3</sup></p></li>
-<li><p><strong>L</strong> (<em>float</em>) – Zonal length of the modeled ACC. Units: m</p></li>
-<li><p><strong>KGM</strong> (<em>float</em>) – Gent &amp; McWilliams (GM) eddy diffusivity coefficient. Units:</p></li>
-<li><p><strong>c</strong> (<em>float</em>) – Phase speed cutoff for smoothing when solving the GM boundary value problem. Units: m/s</p></li>
-<li><p><strong>bvp_with_Ek</strong> (<em>logical</em>) – Whether to enforce the boundary condition that Psi_GM=-Psi_Ek at the ocean
-surface and bottom when solving the boundary value problem for the GM streamfunction.</p></li>
-<li><p><strong>Hsill</strong> (<em>float</em>) – Height above the bottom at which the Ekman streamfunction is tapered. Units: m</p></li>
-<li><p><strong>Hek</strong> (<em>float</em>) – Depth of the surface Ekman layer. Units: m</p></li>
-<li><p><strong>Htapertop</strong> (<em>float</em>) – Height of the quadratic surface tapering layer for the GM streamfunction. Units: m</p></li>
-<li><p><strong>Htaperbot</strong> (<em>float</em>) – Height of the quadratic bottom tapering layer for the GM streamfunction. Units: m</p></li>
-<li><p><strong>smax</strong> (<em>float</em>) – Maximum slope of the GM streamfunction, above which Psi_GM is clipped. Units: m<sup>-1</sup></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.bc_GM">
-<code class="sig-name descname">bc_GM</code><span class="sig-paren">(</span><em class="sig-param">ya</em>, <em class="sig-param">yb</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.bc_GM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the residuals of boundary conditions for the eddy driven transport
-boundary value problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ya</strong> (<em>ndarray</em>) – Bottom boundary condition. Units: Sv</p></li>
-<li><p><strong>yb</strong> (<em>ndarray</em>) – Surface boundary condition. Units: Sv</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bc</strong> – If bvp_with_Ek is false, an array containing the bottom boundary condition
-ya[0] and surface boundary condition yb[0].
-If bvp_with_Ek is true, an array containing the residuals of the supplied
-boundary conditions and the value of the Ekman transport <span class="math notranslate nohighlight">\(\Psi_{Ek}\)</span>
-at those boundaries.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.calc_Ekman">
-<code class="sig-name descname">calc_Ekman</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.calc_Ekman" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the Ekman transport from the wind stress averaged from the
-northern boundary of the domain to the latitude of the northernmost
-outcropped isopycnal.</p>
-<div class="math notranslate nohighlight">
-\[\Psi_{Ek} = -\frac{\tau L_x}{\rho_of_{SO}}\]</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>Psi_Ek</strong> – An array representing the meridional average of the Ekman transport at
-each vertical level of the Southern Ocean model.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.calc_GM">
-<code class="sig-name descname">calc_GM</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.calc_GM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eddy (Gent &amp; Mcwilliams) transport based on the meridionally
-averaged isopycnal slope.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Psi_{GM} &amp;= K_{GM}\cdot s \\
-s\left(b\right) &amp;\equiv \frac{z_B\left(b\right)}{L_y - y_{SO}\left(b\right)}
-\end{aligned}\end{split}\]</div>
-<p>Where <span class="math notranslate nohighlight">\(z_B\left(b\right)\)</span> is the depth of isopycnals of density class <span class="math notranslate nohighlight">\(b\)</span>
-in the adjoining basin, and <span class="math notranslate nohighlight">\(y_{SO}\left(b\right)\)</span> is the outcropping latitude
-of isopycnals of density class <span class="math notranslate nohighlight">\(b\)</span> in the Southern Ocean, available via
-<a class="reference internal" href="#pymoc.modules.Psi_SO.ys" title="pymoc.modules.Psi_SO.ys"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Psi_SO.ys()</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>Psi_GM</strong> – An array representing the meridional average of the eddy transport at
-each vertical level of the Southern Ocean model.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.calc_N2">
-<code class="sig-name descname">calc_N2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.calc_N2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the buouyancy (Brunt-Väisällä) frequency profile for the Southern Ocean</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>N2</strong> – A depth dependent function that returns the buoyancy frequency <span class="math notranslate nohighlight">\(N^2\)</span> for a given depth <span class="math notranslate nohighlight">\(z\)</span>.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.calc_bottom_taper">
-<code class="sig-name descname">calc_bottom_taper</code><span class="sig-paren">(</span><em class="sig-param">H</em>, <em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.calc_bottom_taper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the quadratic tapering profile relative to the ocean floor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>H</strong> (<em>float</em>) – Height above the bottom at which the streamfunction is tapered. Units: m</p></li>
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of overturning grid. Units: m</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bottom_taper</strong> – An array containing weights (0.0-1.0) corresponding to how much of the
-streamfunction should remain after tapering.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.calc_top_taper">
-<code class="sig-name descname">calc_top_taper</code><span class="sig-paren">(</span><em class="sig-param">H</em>, <em class="sig-param">z</em>, <em class="sig-param">scalar=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.calc_top_taper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the quadratic tapering profile relative to the ocean surface.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>H</strong> (<em>float</em>) – Depth from the surface at which the streamfunction is tapered. Units: m</p></li>
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of overturning grid. Units: m</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>top_taper</strong> – An array containing weights (0.0-1.0) corresponding to how much of the
-streamfunction should remain after tapering.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.solve" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the residual overturning transport in the Southern Ocean.</p>
-<div class="math notranslate nohighlight">
-\[\Psi_{SO} = \Psi_{Ek} + \Psi_{GM}\]</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>Psi</strong> – An array representing the meridional average of the residual overturning
-transport at each vertical level of the Southern Ocean. This is a scaled
-sum of the Ekman and eddy transports.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">b=None</em>, <em class="sig-param">bs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the vertical buoyancy profile and surface buoyancy, based on changes
-in the adjoining basin and/or in the surface boundary conditions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>b</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical buoyancy profile from the adjoining basin, on the north
-side of the ACC. Units: m/s<sup>2</sup></p></li>
-<li><p><strong>bs</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Surface level buoyancy boundary condition. Can be a constant,
-or an array or function in y. Units: m/s<sup>2</sup></p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_SO.ys">
-<code class="sig-name descname">ys</code><span class="sig-paren">(</span><em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_SO.ys" title="Permalink to this definition">¶</a></dt>
-<dd><p>Inversion function of <span class="math notranslate nohighlight">\(bs\left(y\right)\)</span>. This is equivalent to the outcopping
-latitude of the isopycnal of density class <span class="math notranslate nohighlight">\(b\)</span>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>b</strong> (<em>float</em>) – The surface buoyancy value for whose meridional location is being calculated.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>ys</strong> – The meridional location at which the surface buoyancy bs is equal to the supplied
-buoyancy value b.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 
@@ -384,15 +159,6 @@ buoyancy value b.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="pymoc.modules.Psi_Thermwind.html" class="btn btn-neutral float-right" title="pymoc.modules.Psi_Thermwind" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="pymoc.modules.Equi_Column.html" class="btn btn-neutral float-left" title="pymoc.modules.Equi_Column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
