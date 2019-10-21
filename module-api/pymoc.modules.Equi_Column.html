@@ -288,7 +288,7 @@ specified depth H.</p>
 <dt id="pymoc.modules.Equi_Column.calc_sol_init">
 <code class="sig-name descname">calc_sol_init</code><span class="sig-paren">(</span><em class="sig-param">sol_init</em>, <em class="sig-param">nz=None</em>, <em class="sig-param">b_bot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.calc_sol_init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the initial guess for the solutions to the system of ordinary differential equations
-defined by <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></p>
+defined by <a class="reference internal" href="#pymoc.modules.Equi_Column.ode" title="pymoc.modules.Equi_Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -382,6 +382,45 @@ upper cell depth <span class="math notranslate nohighlight">\(H\)</span>. Otherw
 <dd class="field-odd"><p>function</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pymoc.modules.Equi_Column.ode">
+<code class="sig-name descname">ode</code><span class="sig-paren">(</span><em class="sig-param">z</em>, <em class="sig-param">y</em>, <em class="sig-param">p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.ode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the ordinary differential equation for the equilibrium column overturning streamfunction,
+to be solved as a boundary value problem:</p>
+<div class="math notranslate nohighlight">
+\[d_{zzzz}(\Psi_{N}) = (\kappa A)^{-1}(\Psi_{N} - \Psi_{SO} - A d_z(\kappa))d_{zzz}(\Psi_N)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid on which to solve the ode. Units: m</p></li>
+<li><p><strong>y</strong> (<em>ndarray</em>) – Initial values for the streamfunction and its vertical gradient.</p></li>
+<li><p><strong>p</strong> (<em>ndarray</em>) – Initial guess for the unknown parameter, H, if not specified at model initialization. Units: m</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>ode</strong> – A vertically oriented array, containing the system of linear equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\partial_zy_1 &amp;= y_2 \\
+\partial_zy_2 &amp;= y_3 \\
+\partial_zy_3 &amp;= y_4 \\
+\partial_zy_4 &amp;= \alpha\left(z, H\right)\cdot y_4\left(y_1 - \Psi_{SO}\left(z, H\right)-\frac{A\cdot\partial_z\kappa\left(z, H\right)}{H^2}\right)
+\end{aligned}\end{split}\]</div>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pymoc.modules.Equi_Column.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve for the thermal wind overturning streamfunction as a boundary value problem
+defined by the system of equations in <a class="reference internal" href="#pymoc.modules.Equi_Column.ode" title="pymoc.modules.Equi_Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></a>.</p>
 </dd></dl>
 
 </dd></dl>
