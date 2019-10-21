@@ -313,7 +313,8 @@ to be solved as a boundary value problem:</p>
 <dt id="pymoc.modules.Column.solve_equi">
 <code class="sig-name descname">solve_equi</code><span class="sig-paren">(</span><em class="sig-param">wA</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.solve_equi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve for the equilibrium buoyancy profile, given a specified vertical
-velocity profile, and pre-set surface and bottom boundary conditions.</p>
+velocity profile, and pre-set surface and bottom boundary conditions, based
+on the system of equations defined by <a class="reference internal" href="#pymoc.modules.Column.ode" title="pymoc.modules.Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Column.ode()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>wA</strong> (<em>ndarray</em>) – Area integrated velocity profile for the equilibrium solution. Units: m<sup>3</sup>/s</p>
