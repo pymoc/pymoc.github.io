@@ -205,6 +205,31 @@ and solving between <span class="math notranslate nohighlight">\(z^*=z/H=0..1\)<
 </dd>
 </dl>
 <dl class="method">
+<dt id="pymoc.modules.Equi_Column.calc_sol_init">
+<code class="sig-name descname">calc_sol_init</code><span class="sig-paren">(</span><em class="sig-param">sol_init</em>, <em class="sig-param">nz=None</em>, <em class="sig-param">b_bot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.calc_sol_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the initial guess for the solutions to the system of ordinary differential equations
+defined by <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sol_init</strong> (<em>ndarray</em>) – User specified initial guess of the solution to the boundary value problem.</p></li>
+<li><p><strong>nz</strong> (<em>integer</em>) – Number of levels in the non-dimensional vertical grid for the numerical solver.</p></li>
+<li><p><strong>b_bot</strong> (<em>float</em>) – Buoyancy at the bottom of the column. Units:</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sol_init</strong> – If a user specified sol_init is provided, return that value. Otherwise, a shape (4, nz) array,
+where the first column contains 1 at each row, the second and third columns contain 0 at each
+row, and the fourth column contains -100 at each row if b_bot is specified, otherwise the
+stratification at the 1500m depth level provided by <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.bz()</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="pymoc.modules.Equi_Column.init_dkappa_dz">
 <code class="sig-name descname">init_dkappa_dz</code><span class="sig-paren">(</span><em class="sig-param">kappa</em>, <em class="sig-param">dkappa_dz=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_dkappa_dz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the vertical diffusivity gradient profile.</p>
@@ -236,6 +261,26 @@ and solving between <span class="math notranslate nohighlight">\(z^*=z/H=0..1\)<
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>kappa(z,H)</strong> – A function that returns the nondimensionalized vertical diffusivity profile <span class="math notranslate nohighlight">\(\frac{\kappa}{H^2f}\)</span>
 as a function of depth <span class="math notranslate nohighlight">\(z\)</span> and upper cell depth <span class="math notranslate nohighlight">\(H\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pymoc.modules.Equi_Column.init_psi_so">
+<code class="sig-name descname">init_psi_so</code><span class="sig-paren">(</span><em class="sig-param">psi_so=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_psi_so" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the nondimensionalized streamfunction passed from the Southern Ocean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psi_so</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Streamfunction in the adjoining Southern Ocean basin. Units:</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>psi_so(z, H)</strong> – If psi_so is specified as a function or array in depth space, returns the
+nondimensionalized Southern Ocean overturning streamfunction
+<span class="math notranslate nohighlight">\(\frac{\Psi_{SO}}{f\cdot H^3}\)</span> as a function of depth <span class="math notranslate nohighlight">\(z\)</span> and
+upper cell depth <span class="math notranslate nohighlight">\(H\)</span>. Otherwise, a function that simply returns 0.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>function</p>
