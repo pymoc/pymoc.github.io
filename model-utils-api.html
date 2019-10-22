@@ -157,22 +157,92 @@
 <dl class="function">
 <dt id="pymoc.utils.check_numpy_version">
 <code class="sig-prename descclassname">pymoc.utils.</code><code class="sig-name descname">check_numpy_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.utils.check_numpy_version" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Check whether your system is using a numpy version of at least 1.13,
+required for some modules for gradient calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>is_sufficient</strong> – True if numpy version &gt;= 1.13, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>logical</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="pymoc.utils.gridit">
 <code class="sig-prename descclassname">pymoc.utils.</code><code class="sig-name descname">gridit</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">x2</em>, <em class="sig-param">f</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.utils.gridit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generate a gridded dataset, based on a function in x1 and x2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x1</strong> (<em>ndarray</em>) – Grid points in the first dimension along which values are to be calculated.</p></li>
+<li><p><strong>x2</strong> (<em>ndarray</em>) – Grid points in the second dimension along which values are to be calculated.</p></li>
+<li><p><strong>f</strong> (<em>function</em>) – A function in dimensions x1 and x2, that returns a single value for each pair of coordinate values.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>gridded</strong> – A 2D array of shape <code class="xref py py-func docutils literal notranslate"><span class="pre">(len(x1),</span> <span class="pre">len(x2))()</span></code>, where each point <code class="xref py py-func docutils literal notranslate"><span class="pre">gridded[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">f(x1[i],</span> <span class="pre">x2[j])()</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="pymoc.utils.make_array">
 <code class="sig-prename descclassname">pymoc.utils.</code><code class="sig-name descname">make_array</code><span class="sig-paren">(</span><em class="sig-param">myst</em>, <em class="sig-param">axis</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.utils.make_array" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Make an argument of unknown type into an array if needed, along the specified array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>myst</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – The argument to be transformed. Either a single numerical value, a function in a single dimension, or an array.</p></li>
+<li><p><strong>axis</strong> (<em>ndarray</em>) – Grid points in the direction along which the array is to be created.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Name of the variable being transformed into an array.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>made_array</strong> – An array representing the data in myst, along axis:</p>
+<ul class="simple">
+<li><p>If myst is an ndarray, simply returns myst.</p></li>
+<li><p>If myst is a float, returns an array of length <code class="xref py py-func docutils literal notranslate"><span class="pre">len(axis)()</span></code> where each row contains the value of myst.</p></li>
+<li><p>If myst is a function, returns an array of length <code class="xref py py-func docutils literal notranslate"><span class="pre">len(axis)()</span></code> where each row contains the value <code class="xref py py-func docutils literal notranslate"><span class="pre">made_array[i]=myst(axis[i])()</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="pymoc.utils.make_func">
 <code class="sig-prename descclassname">pymoc.utils.</code><code class="sig-name descname">make_func</code><span class="sig-paren">(</span><em class="sig-param">myst</em>, <em class="sig-param">axis</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.utils.make_func" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Make an argument of unknown type into a function if needed, in the dimension of the specified array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>myst</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – The argument to be transformed. Either a single numerical value, a function in a single dimension, or an array.</p></li>
+<li><p><strong>axis</strong> (<em>ndarray</em>) – Grid points in the direction along which the function is to operate. If myst is an array, axis should be of the same length.</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – Name of the variable being transformed into a function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>made_func</strong> – An function representing the data in myst, along axis:</p>
+<ul class="simple">
+<li><p>If myst is a funcion, simply returns myst.</p></li>
+<li><p>If myst is a float, returns a function that returns the value of myst.</p></li>
+<li><p>If myst is an array, returns an function that operates along the same dimension as axis, which returns the value <code class="xref py py-func docutils literal notranslate"><span class="pre">made_func(axis[i])=myst[i]()</span></code>, and interpolates values between points in axis.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 
