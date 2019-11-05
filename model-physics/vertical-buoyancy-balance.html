@@ -202,10 +202,41 @@ F^b&amp;=
     0, &amp; b\le b_{bot}(x,y)
   \end{cases}
 \end{aligned}\end{split}\]</div>
+<p>We can now integrate <span class="math notranslate nohighlight">\(\partial_t z\)</span> zonally and meridionally across the basin, assuming zero zonal
+flux (consistent with a basin bounded by continental landmasses):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\partial_t\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}zdxdy &amp;=
+  \int_{x_1}^{x_2}\!\int_{b_{min}}^b \sigma vdb^\prime \left.dx\right|_{y_2}^{y_1} +
+  \partial_b\int_{y_1}^{y_2}\!\int_{x_1}^{x_2}F^bdxdy \\
+  \Psi\left(y, b\right) &amp;\equiv -\int_{x_1}^{x_2}\!\int_{b_{min}}^b \sigma vdb^\prime dx \\
+  \left&lt;X\right&gt; &amp;\equiv \frac{1}{A_o}\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}Xdxdy \\
+  A_o &amp;\equiv \frac{1}{A_o}\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}1dxdy \\
+  \partial_t\left&lt;z\right&gt; &amp;= \frac{1}{A_o}\left[\Psi\left(y_2, b\right) - \Psi\left(y_1, b\right)\right] + \partial_b\left&lt;F^b\right&gt;
+\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Psi\left(y, b\right)\)</span> is the meridional overturning streamfunction in bouyancy space, and
+<span class="math notranslate nohighlight">\(\left&lt;X\right&gt;\)</span> is the horizontal spatial mean of an arbitrary quantity <span class="math notranslate nohighlight">\(X\)</span>. Taking the spatial
+average of the isopycnal thickness <span class="math notranslate nohighlight">\(\sigma\)</span>, we can derive the identity
+<span class="math notranslate nohighlight">\(\left.\left&lt;\sigma\right&gt;=\partial_b\left&lt;z\right&gt;\right|_{b=b\left(\left&lt;z\right&gt;\right)}\)</span> where
+<span class="math notranslate nohighlight">\(b\left(\left&lt;z\right&gt;\right)\)</span> is the buoyancy of the isopycnal with average depth <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>This allows us to rearrange the terms of our equation, so that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\left&lt;\sigma\right&gt;^{-1}\partial_t\left&lt;z\right&gt; &amp;= \left.-\partial_b\left&lt;b\right&gt;\right|_{\left&lt;z\right&gt;} \\
+\left.-\partial_t\left&lt;b\right&gt;\right|_{\left&lt;z\right&gt;} &amp;= -\frac{1}{A_o}\left[\Psi\left(b\left(\left&lt;z\right&gt;\right), y_2\right) - \Psi\left(b, y_1\right)\right]\partial_{\left&lt;z\right&gt;}b-\partial_{\left&lt;z\right&gt;}\left&lt;F^b\right&gt; \\
+\left.-\partial_t\left&lt;b\right&gt;\right|_{\left&lt;z\right&gt;} &amp;= -w^\dagger\partial_{\left&lt;z\right&gt;}b-\partial_{\left&lt;z\right&gt;}\left&lt;F^b\right&gt;
+\end{aligned}\end{split}\]</div>
+<p>where we’ve defined <span class="math notranslate nohighlight">\(w^\dagger\)</span> as the residual upwelling, due to convergence of volume flux along isopycnals
+below <span class="math notranslate nohighlight">\(b\left(\left&lt;z\right&gt;\right)\)</span>.</p>
+<p>If we re-express the buyoyancy forcing in terms of a diabatic surface forcing <span class="math notranslate nohighlight">\(\mathcal{B}_s\)</span> and an effective
+vertical diffusivity <span class="math notranslate nohighlight">\(k_{eff}\equiv\left(\frac{A_1}{A_o}\right)^2\kappa\)</span> where <span class="math notranslate nohighlight">\(A_1\)</span> is the area of non-outcropping
+isopycnals, and drop the spatial averaging notation, our equations can be reduced to:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 \partial_t b \approx -w^\dagger\partial_zb+\partial_z(\kappa_{e\!f\!f}\partial_zb)+\mathcal{B}_s
 \end{aligned}\]</div>
+<p>Where the vertical buoyancy profile is maintained by an advective-diffusive balance relative to average isopycnal depths,
+and accounting for surface forcing.</p>
 </div>
 </div>
 
