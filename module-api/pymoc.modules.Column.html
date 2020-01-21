@@ -239,8 +239,9 @@ and surface buoyancy.</p>
 <dt id="pymoc.modules.Column.convect">
 <code class="sig-name descname">convect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.convect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Carry out downward convective adustment of the vertical buoyancy profile to
-the minimum stratification, <span class="math notranslate nohighlight">\(N^2_{m\!i\!n}\)</span>. This adjustment assumes a fixed surface
-buoyancy boundary condition.</p>
+the minimum stratification, <span class="math notranslate nohighlight">\(N^2_{m\!i\!n}\)</span>. The current implimentation
+assumes a fixed buoyancy at the bottom of the convective region (to be interpreted
+as the minimum surfcae buoyancy).</p>
 </dd></dl>
 
 <dl class="method">
@@ -343,7 +344,7 @@ solution. Positive values indicate transport into the column. Units: m<sup>2</su
 
 <dl class="method">
 <dt id="pymoc.modules.Column.vertadvdiff">
-<code class="sig-name descname">vertadvdiff</code><span class="sig-paren">(</span><em class="sig-param">wA</em>, <em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.vertadvdiff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">vertadvdiff</code><span class="sig-paren">(</span><em class="sig-param">wA</em>, <em class="sig-param">dt</em>, <em class="sig-param">do_conv=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.vertadvdiff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate and apply the forcing from advection and diffusion on the vertical buoyancy
 profile, for the timestepping solution. This function implements an upwind advection
 scheme.</p>
