@@ -162,34 +162,20 @@
             
   <div class="section" id="southern-ocean-surface-buoyancy-balance">
 <h1>Southern Ocean Surface Buoyancy Balance<a class="headerlink" href="#southern-ocean-surface-buoyancy-balance" title="Permalink to this headline">¶</a></h1>
-<p>Understanding of the <a class="reference internal" href="channel-overturning-transport-closure.html#southern-ocean-overturning-transport"><span class="std std-ref">Southern Ocean overturning transport</span></a>
-requires the caclulation of the surface buoyancy structure overlying the channel.</p>
-<p>In agreement with <a class="reference external" href="https://doi.org/10.1175/JCLI-D-17-0797.1">Jansen et al. (2018)</a> a fixed buoyancy flux is applied in the
-region of Antarctic Bottom Water formation, constrained to those latitudes south of
-<span class="math notranslate nohighlight">\(y_{fixed}\)</span> where ice formation takes place. North of this latitude, a surface
-restoring boundary condition is applies, resulting in a surface buoyancy forcing that
-can be described as:</p>
+<p>Computation of the <a class="reference internal" href="channel-overturning-transport-closure.html#southern-ocean-overturning-transport"><span class="std std-ref">Southern Ocean overturning transport</span></a>
+requires knowledges of the surface buoyancy structure in the Southern Ocean. This surface buoyancy
+can either be prescribed or computed via a horizontal residual advection diffusion equation for
+the surface layer of the Southern Ocean:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mathcal{B}_{SO}&amp;=\begin{cases}
-  -\frac{\mathcal{F}_{SO}}{h} &amp; y\le y_{fixed} \\
-  \frac{v_{pist}}{h}\left(b_{SO,0}-b_{SO}\right) &amp; y &gt; y_{fixed}
-\end{cases}
-\end{aligned}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(h\)</span> is the Southern Ocean mixed layer depth, <span class="math notranslate nohighlight">\(\mathcal{F}_{SO}\)</span>
-is the specified buoyancy flux in the Antarctic Bottom Water formation region south
-of <span class="math notranslate nohighlight">\(y_{fixed}\)</span>, <span class="math notranslate nohighlight">\(v_{pist}\)</span> is a piston velocity, <span class="math notranslate nohighlight">\(b_{SO}\)</span> is the
-meridional surface buoyancy profile, and <span class="math notranslate nohighlight">\(b_{SO,0}\)</span> is a prescribed surface
-buoyancy profile.</p>
-<p><span class="math notranslate nohighlight">\(\mathcal{B}_{SO}\)</span> is then used as the forcing term in the advective-difussive
-balance that maintains the meridional buoyancy structure at the surface of the Southern
-Ocean</p>
-<div class="math notranslate nohighlight">
-\[\partial_tb_{SO} = -v^\dagger_{SO}\partial_yb_{SO} + \partial_y\left(K_s\partial_yb_{SO}\right) + \mathcal{B}_{SO}\]</div>
-<p>where <span class="math notranslate nohighlight">\(K_s\)</span> is a horizontal eddy diffusivity in the mixed layer, and
+\[\partial_t b_{SO} = -v^\dagger_{SO}\partial_y b_{SO} + \partial_y\left(K_s\partial_y b_{SO}\right) + \mathcal{B}_{SO}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\mathcal{B}_{SO}\)</span> is the surface forcing, which can be prescribed either via a buoyancy
+restoring to a specified profile or via a fixed flux condition, or via a combination of the two,
+with a fixed flux applied over part of the latitude range and restoring applied elsewhere
+(as in <a class="reference external" href="https://doi.org/10.1175/JPO-D-18-0187.1">Jansen &amp; Nadeau (2019)</a>). <span class="math notranslate nohighlight">\(K_s\)</span> is a horizontal eddy diffusivity in the mixed layer, and
 <span class="math notranslate nohighlight">\(v^\dagger_{SO}\)</span> is the residual meridional advection defined as</p>
 <div class="math notranslate nohighlight">
-\[v^\dagger_{SO} = \frac{\Psi_{SO}}{L_xh}\]</div>
+\[v^\dagger_{SO} = \frac{\Psi_{SO}}{L_x h}\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is the Southern Ocean mixed layer depth.</p>
 </div>
 
 

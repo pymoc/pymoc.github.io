@@ -86,7 +86,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#instructions">Instructions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-easy-way-managed-installing-with-pip-or-conda">The Easy Way: Managed Installing with pip or conda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-hard-er-way-building-from-source">The Hard(er) Way: Building from Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-recommended-way-building-from-source">The Recommended Way: Building from Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-zero-configuration-way-running-in-docker">The Zero Configuration Way: Running in Docker</a></li>
 </ul>
 </li>
@@ -194,7 +194,7 @@ $ pip install scipy&gt;<span class="o">=</span><span class="m">1</span>.3
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install py-moc
 </pre></div>
 </div>
-<p>If you do not have Python3 or pip configured on your system,
+<p>If you do not have Python or pip configured on your system,
 instructions can be found on <a class="reference external" href="https://realpython.com/installing-python/">Real Python</a> and in the <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">PyPa</a>
 documentation.</p>
 <p>Alternatively, you may want to manage your Python environment using
@@ -206,10 +206,10 @@ $ conda install -c anaconda py-moc
 </pre></div>
 </div>
 </div>
-<div class="section" id="the-hard-er-way-building-from-source">
-<h3>The Hard(er) Way: Building from Source<a class="headerlink" href="#the-hard-er-way-building-from-source" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-recommended-way-building-from-source">
+<h3>The Recommended Way: Building from Source<a class="headerlink" href="#the-recommended-way-building-from-source" title="Permalink to this headline">¶</a></h3>
 <p>To install PyMOC from source, you will need to ensure that you have
-Python3, and the proper versions of <a class="reference external" href="http://www.numpy.org/">numpy</a> and <a class="reference external" href="http://www.scipy.org/">scipy</a> installed on
+Python 2.7 or 3, and the proper versions of <a class="reference external" href="http://www.numpy.org/">numpy</a> and <a class="reference external" href="http://www.scipy.org/">scipy</a> installed on
 your system, as for the above managed installation instructions.</p>
 <p>Rather than installing PyMoc via pip or conda, however, you will
 instead directly clone the code repository using git into whatever
@@ -236,17 +236,17 @@ by passing the <code class="docutils literal notranslate"><span class="pre">--us
 <h3>The Zero Configuration Way: Running in Docker<a class="headerlink" href="#the-zero-configuration-way-running-in-docker" title="Permalink to this headline">¶</a></h3>
 <p>If you are just getting started with Python, and have not (or don’t
 want to) configure your system to run PyMOC by hand, a containerized
-<a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker</a> environment is available to uses. A Docker container is a pre-
+<a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker</a> environment is available to users. A Docker container is a pre-
 packaged software execution environment, with all software dependencies
 installed and ready to go, meaning that end users are not required to
 go through tedious system configuration to get up and running. For those
 familiar with Git &amp; GitHub, Docker serves a similar purpose, but for full
 software environments rather than code. Our automated testing suite runs
-in the same Docker container provided here,so for beginners containerization
-is a great alternative to avoid issues surrounding package version and
+in the same Docker container provided here, so for beginners containerization
+is an easy alternative to avoid issues surrounding package version and
 configuration.</p>
 <p>To get started with <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker</a>, sign up for a free account on <a class="reference external" href="https://hub.docker.com/signup">Docker Hub</a>,
-download and install the desktop software for your operating system
+and download and install the desktop software for your operating system
 (available for Windows, MacOS, and Linux). Once you have installed the
 desktop software, open your preferred terminal and download the latest
 version of the PyMOC image:</p>
@@ -271,7 +271,7 @@ $ docker start pymoc
 </pre></div>
 </div>
 <p>And proceed with the instructions for installing and running the model outlined in
-<cite>The Hard(er) Way</cite>, following the dependency and system configuration steps.</p>
+<cite>The Recommended Way</cite>, following the dependency and system configuration steps.</p>
 </div>
 </div>
 </div>
