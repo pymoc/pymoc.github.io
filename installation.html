@@ -85,9 +85,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#instructions">Instructions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-easy-way-managed-installing-with-pip-or-conda">The Easy Way: Managed Installing with pip or conda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-recommended-way-building-from-source">The Recommended Way: Building from Source</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-zero-configuration-way-running-in-docker">The Zero Configuration Way: Running in Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-easy-way-to-get-the-pymoc-modules-installing-with-pip-or-conda">The Easy Way to get the PyMOC Modules: Installing with pip or conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-a-working-environment-the-zero-configuration-way-running-in-docker">Getting a Working Environment the Zero Configuration Way: Running in Docker</a></li>
 </ul>
 </li>
 </ul>
@@ -179,33 +179,10 @@ on your system. As PyMOC is intended primarily as an educational
 instrument, we highly encourage you to download the source from
 <a class="reference external" href="https://www.github.com/pymoc/PyMOC/">GitHub</a> and either install the model locally or utilize our
 pre-build Docker container. Regardless, instructions are provided
-for installing a packaged version of PyMOC from pip for those
-who are not interested in what’s going on under the hood.</p>
-<div class="section" id="the-easy-way-managed-installing-with-pip-or-conda">
-<h3>The Easy Way: Managed Installing with pip or conda<a class="headerlink" href="#the-easy-way-managed-installing-with-pip-or-conda" title="Permalink to this headline">¶</a></h3>
-<p>PyMOC is available on the Python Package Index (PyPi), and can be
-installed via pip in a terminal window. First, make sure you have
-<a class="reference external" href="http://www.numpy.org/">numpy</a> and <a class="reference external" href="http://www.scipy.org/">scipy</a> installed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install numpy&gt;<span class="o">=</span><span class="m">1</span>.13
-$ pip install scipy&gt;<span class="o">=</span><span class="m">1</span>.3
-</pre></div>
-</div>
-<p>Once these dependencies are installed, PyMOC can be installed via</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install py-moc
-</pre></div>
-</div>
-<p>If you do not have Python or pip configured on your system,
-instructions can be found on <a class="reference external" href="https://realpython.com/installing-python/">Real Python</a> and in the <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">PyPa</a>
-documentation.</p>
-<p>Alternatively, you may want to manage your Python environment using
-the <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a> distribution. Once you have installed Anaconda, you
-can follow analagous steps to those required to install via pip</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c anaconda <span class="nv">numpy</span><span class="o">=</span><span class="m">1</span>.13
-$ conda install -c anaconda <span class="nv">scipy</span><span class="o">=</span><span class="m">1</span>.3
-$ conda install -c anaconda py-moc
-</pre></div>
-</div>
-</div>
+for installing a packaged version of the PyMOC modules from pip
+for those who are not interested in what’s going on under the hood.
+Notice however, that the pip installation will not include the code
+directory or examples.</p>
 <div class="section" id="the-recommended-way-building-from-source">
 <h3>The Recommended Way: Building from Source<a class="headerlink" href="#the-recommended-way-building-from-source" title="Permalink to this headline">¶</a></h3>
 <p>To install PyMOC from source, you will need to ensure that you have
@@ -232,8 +209,33 @@ regarding system privileges, you will need to either install as root (via
 <code class="docutils literal notranslate"><span class="pre">sudo</span></code>), or if you do not have root privileges install for only your user
 by passing the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag to the setup script.</p>
 </div>
-<div class="section" id="the-zero-configuration-way-running-in-docker">
-<h3>The Zero Configuration Way: Running in Docker<a class="headerlink" href="#the-zero-configuration-way-running-in-docker" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-easy-way-to-get-the-pymoc-modules-installing-with-pip-or-conda">
+<h3>The Easy Way to get the PyMOC Modules: Installing with pip or conda<a class="headerlink" href="#the-easy-way-to-get-the-pymoc-modules-installing-with-pip-or-conda" title="Permalink to this headline">¶</a></h3>
+<p>PyMOC is available on the Python Package Index (PyPi), and can be
+installed via pip in a terminal window. First, make sure you have
+<a class="reference external" href="http://www.numpy.org/">numpy</a> and <a class="reference external" href="http://www.scipy.org/">scipy</a> installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install numpy&gt;<span class="o">=</span><span class="m">1</span>.13
+$ pip install scipy&gt;<span class="o">=</span><span class="m">1</span>.3
+</pre></div>
+</div>
+<p>Once these dependencies are installed, PyMOC can be installed via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install py-moc
+</pre></div>
+</div>
+<p>If you do not have Python or pip configured on your system,
+instructions can be found on <a class="reference external" href="https://realpython.com/installing-python/">Real Python</a> and in the <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">PyPa</a>
+documentation.</p>
+<p>Alternatively, you may want to manage your Python environment using
+the <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a> distribution. Once you have installed Anaconda, you
+can follow analagous steps to those required to install via pip</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c anaconda <span class="nv">numpy</span><span class="o">=</span><span class="m">1</span>.13
+$ conda install -c anaconda <span class="nv">scipy</span><span class="o">=</span><span class="m">1</span>.3
+$ conda install -c anaconda py-moc
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-a-working-environment-the-zero-configuration-way-running-in-docker">
+<h3>Getting a Working Environment the Zero Configuration Way: Running in Docker<a class="headerlink" href="#getting-a-working-environment-the-zero-configuration-way-running-in-docker" title="Permalink to this headline">¶</a></h3>
 <p>If you are just getting started with Python, and have not (or don’t
 want to) configure your system to run PyMOC by hand, a containerized
 <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker</a> environment is available to users. A Docker container is a pre-
@@ -247,9 +249,9 @@ is an easy alternative to avoid issues surrounding package version and
 configuration.</p>
 <p>To get started with <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker</a>, sign up for a free account on <a class="reference external" href="https://hub.docker.com/signup">Docker Hub</a>,
 and download and install the desktop software for your operating system
-(available for Windows, MacOS, and Linux). Once you have installed the
-desktop software, open your preferred terminal and download the latest
-version of the PyMOC image:</p>
+(available for Windows, MacOS, and Linux). Once you have installed  and
+logged in to desktop software, open your preferred terminal and download
+the latest version of the PyMOC image:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker pull pymoc/pymoc:latest
 </pre></div>
 </div>
