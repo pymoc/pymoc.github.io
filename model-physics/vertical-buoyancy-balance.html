@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -162,13 +162,12 @@
             
   <div class="section" id="vertical-buoyancy-balance">
 <h1>Vertical Buoyancy Balance<a class="headerlink" href="#vertical-buoyancy-balance" title="Permalink to this headline">¶</a></h1>
-<p>The verical buoyancy profiles within ocean basins (e.g. the Atlantic
-Ocean interior, the North Atlantic Deepwater formation region) are
-maintained by a balance between advection &amp; diffusion. If we  assume that isopycnals
-(i.e. surface of constant buoyancy) are relatively flat, horizonatal advection
+<p>The verical buoyancy profiles within ocean basins are adjusted
+via advection &amp; diffusion. If we  assume that isopycnals
+(i.e. surfaces of constant buoyancy) are relatively flat, horizonatal advection
 has a small contribution to the buoyancy tendencies, and the dominant balance
 is between vertical advection and diffusion, as first described by <a class="reference external" href="https://doi.org/10.1016/0011-7471(66)90602-4">Munk (1966)</a>..
-Following <a class="reference external" href="https://doi.org/10.1175/JPO-D-18-0187.1">Jansen and Nadeau (2019)</a>, we here relax the the strict requirement for
+Following <a class="reference external" href="https://doi.org/10.1175/JPO-D-18-0187.1">Jansen and Nadeau (2019)</a>, we here relax the strict requirement for
 flat isopycnals by implementing a residual-advection diffusion equation, which is
 horizontally averaged along isopycnals, such that horizontal buoayncy advection
 vanishes by construction.</p>
@@ -179,13 +178,12 @@ continuity equation in isopycnal space</p>
 <p>Here we define <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> as the diabatic buoyancy tendency, including
 small scale diapycnal mixing processes that cannot be resolved by the model.
 <span class="math notranslate nohighlight">\(\sigma\equiv\partial_b z\)</span> is the isopycnal “thickness”—a measure of the depth range covered by a given
-buyancy (<span class="math notranslate nohighlight">\(b\)</span>) class. We can now transform
+buoyancy class. We can now transform
 the continuity equation into depth space, by integrating from the minimum modeled buoyancy
 (<span class="math notranslate nohighlight">\(b_{min}\)</span>) to buoyancy <span class="math notranslate nohighlight">\(b\)</span></p>
 <div class="math notranslate nohighlight">
 \[\partial_t z=-\nabla_h\cdot\int_{b_{min}}^b\sigma\vec{u}db^\prime - \sigma\mathcal{B}\]</div>
-<p>We next express the diabatic forcing term via a vertical diffusive buoyancy flux (<span class="math notranslate nohighlight">\(F^b\)</span>),
-defined relative to the eddy diffusivity (<span class="math notranslate nohighlight">\(\kappa\)</span>) and surface buoyancy flux (<span class="math notranslate nohighlight">\(F_s^b\)</span>)</p>
+<p>We next express the diabatic forcing term via the convergence of a vertical buoyancy flux (<span class="math notranslate nohighlight">\(F^b\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \sigma\mathcal{B}&amp;=-\partial_b F^b \\
@@ -196,8 +194,9 @@ F^b&amp;=
     0, &amp; b\le b_{bot}(x,y)
   \end{cases}
 \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(F^s\)</span> is the surface buoyancy flux.</p>
 <p>We can now integrate <span class="math notranslate nohighlight">\(\partial_t z\)</span> zonally and meridionally across the basin, assuming zero
-flux across teh zonal boundaries (consistent with a basin bounded by continental landmasses):</p>
+flux across the zonal boundaries (consistent with a basin bounded by continental landmasses):</p>
 <div class="math notranslate nohighlight">
 \[\partial_t\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}zdxdy =
   \int_{x_1}^{x_2}\!\int_{b_{min}}^b \sigma vdb^\prime \left.dx\right|_{y_2}^{y_1} +
@@ -207,7 +206,7 @@ flux across teh zonal boundaries (consistent with a basin bounded by continental
 \[\begin{split}\begin{aligned}
   \Psi\left(y, b\right) &amp;\equiv -\int_{x_1}^{x_2}\!\int_{b_{min}}^b \sigma vdb^\prime dx \\
   \langle X \rangle &amp;\equiv \frac{1}{A_o}\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}Xdxdy \\
-  A_o &amp;\equiv \frac{1}{A_o}\int_{x_1}^{x_2}\!\int_{y_1}^{y_2}1dxdy \\
+  A_o &amp;\equiv \int_{x_1}^{x_2}\!\int_{y_1}^{y_2}1dxdy \\
 \end{aligned}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Psi\left(y, b\right)\)</span> is the meridional overturning streamfunction in bouyancy space, and
 <span class="math notranslate nohighlight">\(\langle X \rangle\)</span> is the horizontal spatial mean of an arbitrary quantity <span class="math notranslate nohighlight">\(X\)</span>, we get</p>
@@ -223,9 +222,9 @@ flux across teh zonal boundaries (consistent with a basin bounded by continental
 \end{aligned}\end{split}\]</div>
 <p>where we’ve defined <span class="math notranslate nohighlight">\(w^\dagger\)</span> as the residual upwelling due to convergence of volume flux along isopycnals
 below <span class="math notranslate nohighlight">\(b\left(\langle z\rangle\right)\)</span>.</p>
-<p>If we re-express the buyoyancy forcing in terms of a diabatic surface forcing <span class="math notranslate nohighlight">\(\mathcal{B}_s\)</span> and an effective
+<p>Dropping the spatial averages in our notation, defining the surface forcing <span class="math notranslate nohighlight">\(\mathcal{B}_s\equiv -\partial_b F^s\)</span> and effective
 vertical diffusivity <span class="math notranslate nohighlight">\(\kappa_{eff}\equiv\left(\frac{A_1}{A_o}\right)^2\kappa\)</span> where <span class="math notranslate nohighlight">\(A_1\)</span> is the area of the non-incropping
-part of the isopycnal surace, and drop the spatial averages in our notation, the equation can be reduced to:</p>
+part of the isopycnal surace, the equation can be reduced to (see <a class="reference external" href="https://doi.org/10.1175/JPO-D-18-0187.1">Jansen and Nadeau (2019)</a> for details):</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 \partial_t b \approx -w^\dagger\partial_z b+\partial_z(\kappa_{e\!f\!f}\partial_z b)+\mathcal{B}_s
