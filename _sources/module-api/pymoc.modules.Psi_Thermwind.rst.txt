@@ -1,7 +1,28 @@
-pymoc.modules.Psi\_Thermwind
+﻿pymoc.modules.Psi\_Thermwind
 ============================
 
 .. currentmodule:: pymoc.modules
+
 .. autoclass:: Psi_Thermwind
-  :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Psi_Thermwind.Psib
+      ~Psi_Thermwind.Psibz
+      ~Psi_Thermwind.__init__
+      ~Psi_Thermwind.bc
+      ~Psi_Thermwind.ode
+      ~Psi_Thermwind.solve
+      ~Psi_Thermwind.update
+   
+   
+
+   
+   
    

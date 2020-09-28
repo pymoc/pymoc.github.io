@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,15 +30,11 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Model Utils API" href="../model-utils-api.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pymoc
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pymoc
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -100,6 +102,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -138,7 +141,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../module-api.html">Module API</a> &raquo;</li>
         
@@ -163,9 +166,9 @@
             
   <div class="section" id="pymoc-modules-so-ml">
 <h1>pymoc.modules.SO_ML<a class="headerlink" href="#pymoc-modules-so-ml" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pymoc.modules.SO_ML">
-<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">SO_ML</code><span class="sig-paren">(</span><em class="sig-param">y=None</em>, <em class="sig-param">Ks=0.0</em>, <em class="sig-param">h=50.0</em>, <em class="sig-param">L=4000000.0</em>, <em class="sig-param">surflux=0.0</em>, <em class="sig-param">rest_mask=0.0</em>, <em class="sig-param">b_rest=0.0</em>, <em class="sig-param">v_pist=1.736111111111111e-05</em>, <em class="sig-param">bs=0.0</em>, <em class="sig-param">Psi_s=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">SO_ML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Ks</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">h</span><span class="o">=</span><span class="default_value">50.0</span></em>, <em class="sig-param"><span class="n">L</span><span class="o">=</span><span class="default_value">4000000.0</span></em>, <em class="sig-param"><span class="n">surflux</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">rest_mask</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">b_rest</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">v_pist</span><span class="o">=</span><span class="default_value">1.736111111111111e-05</span></em>, <em class="sig-param"><span class="n">bs</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">Psi_s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML" title="Permalink to this definition">¶</a></dt>
 <dd><p>Southern Ocean Mixed Layer Model</p>
 <p>Instances of this class represent 1D representations of the meridional buoyancy structure
 in the Southern Ocean mixed layer, based on the solution to an advective-diffusive equation.
@@ -189,120 +192,62 @@ and buoyancy profile in the basin.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.advdiff">
-<code class="sig-name descname">advdiff</code><span class="sig-paren">(</span><em class="sig-param">b_basin</em>, <em class="sig-param">Psi_b</em>, <em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.advdiff" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute and apply advective-diffusive transport to the Souther Ocean Mixed Layer model,
-based on conditions in the adjoining basin.</p>
-<dl class="field-list simple">
+<dl class="py method">
+<dt id="pymoc.modules.SO_ML.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Ks</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">h</span><span class="o">=</span><span class="default_value">50.0</span></em>, <em class="sig-param"><span class="n">L</span><span class="o">=</span><span class="default_value">4000000.0</span></em>, <em class="sig-param"><span class="n">surflux</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">rest_mask</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">b_rest</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">v_pist</span><span class="o">=</span><span class="default_value">1.736111111111111e-05</span></em>, <em class="sig-param"><span class="n">bs</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">Psi_s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>b_basin</strong> (<em>ndarray</em>) – The buoyancy profile in the adjoining basin. Units:</p></li>
-<li><p><strong>Psi_b</strong> (<em>ndarray</em>) – The transport streamfunction in the Southern Ocean. Units: Sv</p></li>
-<li><p><strong>dt</strong> (<em>float</em>) – The timestep duration for the mixed layer model.</p></li>
+<li><p><strong>y</strong> (<em>ndarray</em>) – Uniform meridional mixed layer grid. Units: m</p></li>
+<li><p><strong>Ks</strong> (<em>float</em>) – Horizontal diffusivity in the mixed layer. Units:</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – Mixed layer depth. Units: m</p></li>
+<li><p><strong>L</strong> (<em>float</em>) – Zonal length of the mixed layer. Units: m</p></li>
+<li><p><strong>surflux</strong> (<em>float</em><em>, </em><em>ndarray</em><em>, or </em><em>function; optional</em>) – Prescribed surface buoyancy flux. Units: m<sup>2</sup>/s<sup>3</sup></p></li>
+<li><p><strong>rest_mask</strong> (<em>float</em><em>, </em><em>ndarray</em><em>, or </em><em>function; optional</em>) – Surface restoring mask, prescribed as 1 where restoring is desired, and 0 elsewhere.</p></li>
+<li><p><strong>b_rest</strong> (<em>float</em><em>, </em><em>ndarray</em><em>, or </em><em>function; optional</em>) – Prescribed surface buoyancy profile towards which mixed layer buoyancy is restored. Units:</p></li>
+<li><p><strong>v_pist</strong> (<em>float; optional</em>) – Prescribed piston velocity for buoyancy restoration. Units: m/s</p></li>
+<li><p><strong>bs</strong> (<em>float</em><em>, </em><em>ndarray</em><em>, or </em><em>function; optional</em>) – Initial meridional surface buoyancy profile in the mixed layer. Units:</p></li>
+<li><p><strong>Psi_s</strong> (<em>ndarray; optional</em>) – Initial overturning transport in the mixed layer. Units: Sv</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.calc_advective_tendency">
-<code class="sig-name descname">calc_advective_tendency</code><span class="sig-paren">(</span><em class="sig-param">dy</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.calc_advective_tendency" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the advective transport tendency in the Southern Ocean mixed layer:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\left[\partial_tb_{SO}\right]_{adv} &amp;= -v_{SO}^\dagger\partial_yb_{SO} \\
-v_{SO}^\dagger &amp;= \frac{\Psi_{SO}}{h\cdot L_x}
-\end{aligned}\end{split}\]</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dy</strong> (<em>float</em>) – The horizontal grid spacing for the mixed layer model.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>dbdb_ad</strong> – An array representing the advecting tendency at each grid point.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>([y, Ks, h, L, surflux, rest_mask, …])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param y</dt>
+<dd class="field-odd"><p>Uniform meridional mixed layer grid. Units: m</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.calc_diffusion_matrix">
-<code class="sig-name descname">calc_diffusion_matrix</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.calc_diffusion_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the forward time centered space (FTCS) coeffient matrix for the implicit diffusion scheme, based on
-the stability criterion:</p>
-<div class="math notranslate nohighlight">
-\[s = K_s\cdot\frac{dt}{dy^2}\]</div>
-<dl class="simple">
-<dt>s: float</dt><dd><p>Stability criterion for FTCS implicit solution.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>U</strong> – Coefficient matrix representing the system of linear equations being solved by the implicit diffusion scheme.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.calc_implicit_diffusion">
-<code class="sig-name descname">calc_implicit_diffusion</code><span class="sig-paren">(</span><em class="sig-param">dy</em>, <em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.calc_implicit_diffusion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the diffusive transport in Southern Ocean mixed layer:</p>
-<div class="math notranslate nohighlight">
-\[\left[\partial_tb_{SO}\right]_{di\hspace{-0.1em}f\hspace{-0.2em}f} = \partial_y\left(K_s\partial_yb_{SO}\right)\]</div>
-<p>via an implicit scheme and apply it to the surface buoyancy.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>dy</strong> (<em>float</em>) – The horizontal grid spacing for the mixed layer model.</p></li>
-<li><p><strong>dt</strong> (<em>float</em>) – The timestep duration for the mixed layer model.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bs</strong> – Updated surface buoyancy, with the implicit diffusion applied.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.set_boundary_conditions">
-<code class="sig-name descname">set_boundary_conditions</code><span class="sig-paren">(</span><em class="sig-param">b_basin</em>, <em class="sig-param">Psi_b</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.set_boundary_conditions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the surface boundary conditions at the southern boundary of the Southern
-Ocean mixed layer. If upwelling takes place at the boundary, set the buoyancy
-there to match the densest upwelled density class from the adjoining basin.
-Otherwisee, impose a no-flux boundary condition.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>b_basin</strong> (<em>ndarray</em>) – The buoyancy profile in the adjoining basin. Units:</p></li>
-<li><p><strong>Psi_b</strong> (<em>ndarray</em>) – The transport streamfunction in the Southern Ocean. Units: Sv</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.SO_ML.timestep">
-<code class="sig-name descname">timestep</code><span class="sig-paren">(</span><em class="sig-param">b_basin=None</em>, <em class="sig-param">Psi_b=None</em>, <em class="sig-param">dt=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.SO_ML.timestep" title="Permalink to this definition">¶</a></dt>
-<dd><p>Integrate the mixed layer buoyancy profile for one timestep.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>b_basin</strong> (<em>ndarray</em>) – The buoyancy profile in the adjoining basin. Units:</p></li>
-<li><p><strong>Psi_b</strong> (<em>ndarray</em>) – The transport streamfunction in the Southern Ocean. Units: Sv</p></li>
-<li><p><strong>dt</strong> (<em>float</em>) – The timestep duration for the mixed layer model.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">advdiff</span></code>(b_basin, Psi_b, dt)</p></td>
+<td><p>Compute and apply advective-diffusive transport to the Souther Ocean Mixed Layer model, based on conditions in the adjoining basin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_advective_tendency</span></code>(dy)</p></td>
+<td><p>Compute the advective transport tendency in the Southern Ocean mixed layer:</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_diffusion_matrix</span></code>(s)</p></td>
+<td><p>Compute the forward time centered space (FTCS) coeffient matrix for the implicit diffusion scheme, based on the stability criterion:</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_implicit_diffusion</span></code>(dy, dt)</p></td>
+<td><p>Compute the diffusive transport in Southern Ocean mixed layer:</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_boundary_conditions</span></code>(b_basin, Psi_b)</p></td>
+<td><p>Set the surface boundary conditions at the southern boundary of the Southern Ocean mixed layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestep</span></code>([b_basin, Psi_b, dt])</p></td>
+<td><p>Integrate the mixed layer buoyancy profile for one timestep.</p></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -327,11 +272,19 @@ Otherwisee, impose a no-flux boundary condition.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, PyMOC Team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -342,7 +295,6 @@ Otherwisee, impose a no-flux boundary condition.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

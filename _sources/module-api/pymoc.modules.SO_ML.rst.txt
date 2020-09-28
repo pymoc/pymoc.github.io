@@ -1,7 +1,28 @@
-pymoc.modules.SO\_ML
+﻿pymoc.modules.SO\_ML
 ====================
 
 .. currentmodule:: pymoc.modules
+
 .. autoclass:: SO_ML
-  :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SO_ML.__init__
+      ~SO_ML.advdiff
+      ~SO_ML.calc_advective_tendency
+      ~SO_ML.calc_diffusion_matrix
+      ~SO_ML.calc_implicit_diffusion
+      ~SO_ML.set_boundary_conditions
+      ~SO_ML.timestep
+   
+   
+
+   
+   
    

@@ -1,7 +1,32 @@
-pymoc.modules.Equi\_Column
+﻿pymoc.modules.Equi\_Column
 ==========================
 
 .. currentmodule:: pymoc.modules
+
 .. autoclass:: Equi_Column
-  :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Equi_Column.__init__
+      ~Equi_Column.alpha
+      ~Equi_Column.bc
+      ~Equi_Column.bz
+      ~Equi_Column.calc_sol_init
+      ~Equi_Column.init_b_boundaries
+      ~Equi_Column.init_dkappa_dz
+      ~Equi_Column.init_kappa
+      ~Equi_Column.init_psi_so
+      ~Equi_Column.ode
+      ~Equi_Column.solve
+   
+   
+
+   
+   
    

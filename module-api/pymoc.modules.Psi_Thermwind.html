@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,15 +30,11 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pymoc.modules.SO_ML" href="pymoc.modules.SO_ML.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pymoc
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pymoc
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -100,6 +102,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -138,7 +141,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../module-api.html">Module API</a> &raquo;</li>
         
@@ -163,9 +166,9 @@
             
   <div class="section" id="pymoc-modules-psi-thermwind">
 <h1>pymoc.modules.Psi_Thermwind<a class="headerlink" href="#pymoc-modules-psi-thermwind" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pymoc.modules.Psi_Thermwind">
-<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Psi_Thermwind</code><span class="sig-paren">(</span><em class="sig-param">f=0.00012</em>, <em class="sig-param">z=None</em>, <em class="sig-param">sol_init=None</em>, <em class="sig-param">b1=None</em>, <em class="sig-param">b2=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Psi_Thermwind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">0.00012</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sol_init</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b2</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thermal Wind Closure</p>
 <p>Instances of this class represent the overturning circulation between two columns,
 given buoyancy profiles in those columns.</p>
@@ -190,119 +193,15 @@ deepwater formation region. Units: m/s<sup>2</sup></p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.Psib">
-<code class="sig-name descname">Psib</code><span class="sig-paren">(</span><em class="sig-param">nb=500</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.Psib" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remap the overturning streamfunction from physical depth space, into isopycnal
-space</p>
-<div class="math notranslate nohighlight">
-\[\Psi^b\left(b\right) = \int_{-H}^0 \partial_z\Psi\left(z\right)\mathcal{H}\left[b - b_{up}\left(z\right)\right]\]</div>
-<p>by computing upwind density classes</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-b_{up}\left(z\right) =
-\begin{cases}
-  b_N\left(z\right), &amp; \partial_z\Psi\left(z\right)  &gt; 0 \\
-  b_B\left(z\right), &amp; \partial_z\Psi\left(z\right)  &lt; 0
-\end{cases}
-\end{aligned}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(b_N\left(z\right)\)</span> is the density profiles in the northern region, <span class="math notranslate nohighlight">\(b_B\left(z\right)\)</span> is
-the density profile in the southern basin, and <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> is the Heaviside step function.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nb</strong> (<em>int; optional</em>) – Number of upstream density classes into which the streamfunction is to be remapped.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>psib</strong> – An array representing the values of the overturning streamfunction in each upwind density class.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.Psibz">
-<code class="sig-name descname">Psibz</code><span class="sig-paren">(</span><em class="sig-param">nb=500</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.Psibz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remap the overturning streamfunction onto the native isopycnal-depth space
-of the columns in the northern region and southern basin.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nb</strong> (<em>int; optional</em>) – Number of upstream density classes into which the streamfunction is to be remapped in the intermediate <a class="reference internal" href="#pymoc.modules.Psi_Thermwind.Psib" title="pymoc.modules.Psi_Thermwind.Psib"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Psi_Thermwind.Psib()</span></code></a> step.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>psibz</strong> – An array where the first element is an array representing the streamfunction at each depth level in the southern basin, and the second represents the same in the northern region.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.bc">
-<code class="sig-name descname">bc</code><span class="sig-paren">(</span><em class="sig-param">ya</em>, <em class="sig-param">yb</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.bc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the residuals of boundary conditions for the thermal wind closure
-boundary value problem.</p>
-<dl class="field-list simple">
+<dl class="py method">
+<dt id="pymoc.modules.Psi_Thermwind.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">0.00012</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sol_init</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b2</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ya</strong> (<em>ndarray</em>) – Bottom boundary condition. Units:</p></li>
-<li><p><strong>yb</strong> (<em>ndarray</em>) – Surface boundary condition. Units:</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bc</strong> – An array containing the value of the streamfunction at the top and bottom
-levels of the vertical grid.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.ode">
-<code class="sig-name descname">ode</code><span class="sig-paren">(</span><em class="sig-param">z</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.ode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the ordinary differential equation for the thermal wind overturning streamfunction,
-to be solved as a boundary value problem:</p>
-<p><span class="math notranslate nohighlight">\(d_{zz}\left(\Psi\right) = f^{-1} (b_2 - b_1)\)</span></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid on which to solve the ode. Units: m</p></li>
-<li><p><strong>y</strong> (<em>ndarray</em>) – Initial values for the streamfunction and its vertical gradient.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>ode</strong> – A vertically oriented array, containing the system of linear equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\partial_zy_1 &amp;= y_2 \\
-\partial_zy_2 &amp;= \frac{b_2\left(z\right) - b_1\left(z\right)}{f}
-\end{aligned}\end{split}\]</div>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.solve" title="Permalink to this definition">¶</a></dt>
-<dd><p>Solve for the thermal wind overturning streamfunction as a boundary value problem
-based on the system of equations defined in <a class="reference internal" href="#pymoc.modules.Psi_Thermwind.ode" title="pymoc.modules.Psi_Thermwind.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Psi_Thermwind.ode()</span></code></a>.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Psi_Thermwind.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">b1=None</em>, <em class="sig-param">b2=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Psi_Thermwind.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the vertical buoyancy profiles from the southern basin and northern region.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>float</em>) – Coriolis parameter. Units s<sup>-1</sup></p></li>
+<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of overturning grid. Units: m</p></li>
+<li><p><strong>sol_init</strong> (<em>ndarray; optional</em>) – Initial guess at the solution to the thermal wind overturning streamfunction. Units: […]</p></li>
 <li><p><strong>b1</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray; optional</em>) – Vertical buoyancy profile from the southern basin. Units: m/s<sup>2</sup></p></li>
 <li><p><strong>b2</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray; optional</em>) – Vertical buoyancy profile from the northern basin, representing the
 deepwater formation region. Units: m/s<sup>2</sup></p></li>
@@ -311,6 +210,41 @@ deepwater formation region. Units: m/s<sup>2</sup></p></li>
 </dl>
 </dd></dl>
 
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Psib</span></code>([nb])</p></td>
+<td><p>Remap the overturning streamfunction from physical depth space, into isopycnal space</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Psibz</span></code>([nb])</p></td>
+<td><p>Remap the overturning streamfunction onto the native isopycnal-depth space of the columns in the northern region and southern basin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymoc.modules.Psi_Thermwind.__init__" title="pymoc.modules.Psi_Thermwind.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([f, z, sol_init, b1, b2])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param f</dt>
+<dd class="field-odd"><p>Coriolis parameter. Units s<sup>-1</sup></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bc</span></code>(ya, yb)</p></td>
+<td><p>Calculate the residuals of boundary conditions for the thermal wind closure boundary value problem.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ode</span></code>(z, y)</p></td>
+<td><p>Generate the ordinary differential equation for the thermal wind overturning streamfunction, to be solved as a boundary value problem:</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>()</p></td>
+<td><p>Solve for the thermal wind overturning streamfunction as a boundary value problem based on the system of equations defined in <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Psi_Thermwind.ode()</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code>([b1, b2])</p></td>
+<td><p>Update the vertical buoyancy profiles from the southern basin and northern region.</p></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -335,11 +269,19 @@ deepwater formation region. Units: m/s<sup>2</sup></p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, PyMOC Team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -350,7 +292,6 @@ deepwater formation region. Units: m/s<sup>2</sup></p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,15 +30,11 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pymoc.modules.Psi_SO" href="pymoc.modules.Psi_SO.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pymoc
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pymoc
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -100,6 +102,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -138,7 +141,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../module-api.html">Module API</a> &raquo;</li>
         
@@ -163,9 +166,9 @@
             
   <div class="section" id="pymoc-modules-equi-column">
 <h1>pymoc.modules.Equi_Column<a class="headerlink" href="#pymoc-modules-equi-column" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pymoc.modules.Equi_Column">
-<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Equi_Column</code><span class="sig-paren">(</span><em class="sig-param">f=0.00012</em>, <em class="sig-param">b_s=0.025</em>, <em class="sig-param">b_bot=None</em>, <em class="sig-param">B_int=3000.0</em>, <em class="sig-param">A=70000000000000.0</em>, <em class="sig-param">nz=100</em>, <em class="sig-param">sol_init=None</em>, <em class="sig-param">H_guess=1500.0</em>, <em class="sig-param">kappa=6e-05</em>, <em class="sig-param">dkappa_dz=None</em>, <em class="sig-param">psi_so=None</em>, <em class="sig-param">z=None</em>, <em class="sig-param">H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Equi_Column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">0.00012</span></em>, <em class="sig-param"><span class="n">b_s</span><span class="o">=</span><span class="default_value">0.025</span></em>, <em class="sig-param"><span class="n">b_bot</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">B_int</span><span class="o">=</span><span class="default_value">3000.0</span></em>, <em class="sig-param"><span class="n">A</span><span class="o">=</span><span class="default_value">70000000000000.0</span></em>, <em class="sig-param"><span class="n">nz</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">sol_init</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">H_guess</span><span class="o">=</span><span class="default_value">1500.0</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">6e-05</span></em>, <em class="sig-param"><span class="n">dkappa_dz</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">psi_so</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">H</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equilibrium 1D Column Model</p>
 <p>Instances of this class represent a 1D column model for the MOC. The model is written in terms
 of a boundary value problem solving the the ODE:</p>
@@ -204,225 +207,77 @@ and solving between <span class="math notranslate nohighlight">\(z^*=z/H=0..1\)<
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.alpha">
-<code class="sig-name descname">alpha</code><span class="sig-paren">(</span><em class="sig-param">z</em>, <em class="sig-param">H</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.alpha" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the nondimensional factor:</p>
-<div class="math notranslate nohighlight">
-\[\alpha\left(z, H\right) = \frac{H^2}{A\cdot\kappa\left(z, H\right)}\]</div>
-<dl class="field-list simple">
+<dl class="py method">
+<dt id="pymoc.modules.Equi_Column.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">0.00012</span></em>, <em class="sig-param"><span class="n">b_s</span><span class="o">=</span><span class="default_value">0.025</span></em>, <em class="sig-param"><span class="n">b_bot</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">B_int</span><span class="o">=</span><span class="default_value">3000.0</span></em>, <em class="sig-param"><span class="n">A</span><span class="o">=</span><span class="default_value">70000000000000.0</span></em>, <em class="sig-param"><span class="n">nz</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">sol_init</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">H_guess</span><span class="o">=</span><span class="default_value">1500.0</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">6e-05</span></em>, <em class="sig-param"><span class="n">dkappa_dz</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">psi_so</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">H</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>float</em>) – Coriolis parameter. Units s<sup>-1</sup></p></li>
+<li><p><strong>b_s</strong> (<em>float</em>) – Buoyancy at the surface of the column. Units:</p></li>
+<li><p><strong>b_bot</strong> (<em>float</em>) – Buoyancy at the bottom of the column. Units:</p></li>
+<li><p><strong>B_int</strong> (<em>float</em>) – Integrated downward buyancy flux at the bottom of the surface cell. Units:</p></li>
+<li><p><strong>A</strong> (<em>float</em>) – Horizontal area of basin. Units: m<sup>2</sup></p></li>
+<li><p><strong>nz</strong> (<em>int</em>) – Number of levels in the non-dimensional vertical grid for the numerical solver.</p></li>
+<li><p><strong>sol_init</strong> (<em>ndarray</em>) – Initial guess of the solution to the boundary value problem.</p></li>
+<li><p><strong>H_guess</strong> (<em>float</em>) – Initial guess for the depth of the upper cell, if solving for it. Units: m</p></li>
+<li><p><strong>kappa</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity profile. Units: m<sup>2</sup>/s</p></li>
+<li><p><strong>dkappa_dz</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity gradient profile. Units: m/s</p></li>
+<li><p><strong>psi_so</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Streamfunction in the adjoining Southern Ocean basin. Units:</p></li>
 <li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid. Units: m</p></li>
 <li><p><strong>H</strong> (<em>float</em>) – Depth of the upper cell, if specifying. Units: m</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>alpha</strong> – The value of the nondimentional factor <span class="math notranslate nohighlight">\(\alpha\)</span> for the specified
-depth <span class="math notranslate nohighlight">\(z\)</span> and upper cell depth <span class="math notranslate nohighlight">\(H\)</span>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.bc">
-<code class="sig-name descname">bc</code><span class="sig-paren">(</span><em class="sig-param">ya</em>, <em class="sig-param">yb</em>, <em class="sig-param">p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.bc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the boundary conditions for the equilibrium column
-boundary value problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ya</strong> (<em>ndarray</em>) – Bottom boundary condition. Units:</p></li>
-<li><p><strong>yb</strong> (<em>ndarray</em>) – Surface boundary condition. Units:</p></li>
-<li><p><strong>p</strong> (<em>ndarray</em>) – Initial guess for the unknown parameter, H, if not specified at model initialization. Units: m</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>bc</strong> – An array containing the boundary conditions of the ODE:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- bc\left[0\right]&amp;=\Psi_N(0) \\
- bc\left[1\right]&amp;=\Psi_N(-H) \\
- bc\left[2\right]&amp;=\begin{cases}
-   \partial_{zz}\Psi_N\left(0\right) - \frac{b_{bot}}{H} &amp; b_{bot} \textrm{ is specified}\\
-   \partial_{zzz}\Psi_N\left(0\right) + d_zb\left(-H\right) &amp; b_{bot} \textrm{ is unspecified}
- \end{cases}\\
- bc\left[3\right]&amp;=\partial_{zz}\Psi_N\left(H\right)-\frac{b_s}{H} \\
-\end{aligned}\end{split}\]</div>
-<p>If <span class="math notranslate nohighlight">\(H\)</span> is not specified by the user, then there is an additional boundary condition  inserted:</p>
-<div class="math notranslate nohighlight">
-\[bc\left[2\right] = \partial_z\Psi_N\left(-H\right)\]</div>
-<p>and each subsequent row moves up an index.</p>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pymoc.modules.Equi_Column.__init__" title="pymoc.modules.Equi_Column.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([f, b_s, b_bot, B_int, A, nz, …])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param f</dt>
+<dd class="field-odd"><p>Coriolis parameter. Units s<sup>-1</sup></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.bz">
-<code class="sig-name descname">bz</code><span class="sig-paren">(</span><em class="sig-param">H</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.bz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the nondimenzionalized stratification at the bottom of the upper cell</p>
-<div class="math notranslate nohighlight">
-\[\partial_zb\approx\frac{B_{int}}{f^3\cdot H^2\cdot A \cdot\kappa\left(-1, H\right)}\]</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>H</strong> (<em>float</em>) – Depth of the upper cell, if specifying. Units: m</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bz</strong> – The value of the nondimensionalized stratification at the bottom of the cell with
-specified depth H.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.calc_sol_init">
-<code class="sig-name descname">calc_sol_init</code><span class="sig-paren">(</span><em class="sig-param">sol_init</em>, <em class="sig-param">nz=None</em>, <em class="sig-param">b_bot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.calc_sol_init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the initial guess for the solutions to the system of ordinary differential equations
-defined by <a class="reference internal" href="#pymoc.modules.Equi_Column.ode" title="pymoc.modules.Equi_Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sol_init</strong> (<em>ndarray</em>) – User specified initial guess of the solution to the boundary value problem.</p></li>
-<li><p><strong>nz</strong> (<em>integer</em>) – Number of levels in the non-dimensional vertical grid for the numerical solver.</p></li>
-<li><p><strong>b_bot</strong> (<em>float</em>) – Buoyancy at the bottom of the column. Units:</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>sol_init</strong> – If a user specified sol_init is provided, return that value. Otherwise, a shape (4, nz) array,
-where the first column contains 1 at each row, the second and third columns contain 0 at each
-row, and the fourth column contains -100 at each row if b_bot is specified, otherwise the
-stratification at the 1500m depth level provided by <a class="reference internal" href="#pymoc.modules.Equi_Column.bz" title="pymoc.modules.Equi_Column.bz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.bz()</span></code></a>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.init_b_boundaries">
-<code class="sig-name descname">init_b_boundaries</code><span class="sig-paren">(</span><em class="sig-param">b_s</em>, <em class="sig-param">b_bot=None</em>, <em class="sig-param">B_int=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_b_boundaries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize and set the nondimensionalize surface buoyance and bottom buoyance, or the
-abyssal buoyancy flux boundary condition if no bottom buoyancy is specified.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>b_s</strong> (<em>float</em>) – Buoyancy at the surface of the column. Units:</p></li>
-<li><p><strong>b_bot</strong> (<em>float</em>) – Buoyancy at the bottom of the column. Units:</p></li>
-<li><p><strong>B_int</strong> (<em>float</em>) – Integrated downward buyancy flux at the bottom of the surface cell. Units:</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.init_dkappa_dz">
-<code class="sig-name descname">init_dkappa_dz</code><span class="sig-paren">(</span><em class="sig-param">kappa</em>, <em class="sig-param">dkappa_dz=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_dkappa_dz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the vertical diffusivity gradient profile.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>kappa</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity profile. Units: m<sup>2</sup>/s</p></li>
-<li><p><strong>dkappa_dz</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity profile. Units: m/s</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>dkappa_dz(z,H)</strong> – A function that returns the nondimensionalized vertical diffusivity gradient profile
-<span class="math notranslate nohighlight">\(\frac{\partial_z\kappa}{H\cdot f}\)</span> as a function of depth <span class="math notranslate nohighlight">\(z\)</span> and upper cell depth <span class="math notranslate nohighlight">\(H\)</span>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.init_kappa">
-<code class="sig-name descname">init_kappa</code><span class="sig-paren">(</span><em class="sig-param">kappa</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_kappa" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the vertical diffusivity profile.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>kappa</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity profile. Units: m<sup>2</sup>/s</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>kappa(z,H)</strong> – A function that returns the nondimensionalized vertical diffusivity profile <span class="math notranslate nohighlight">\(\frac{\kappa}{H^2f}\)</span>
-as a function of depth <span class="math notranslate nohighlight">\(z\)</span> and upper cell depth <span class="math notranslate nohighlight">\(H\)</span>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.init_psi_so">
-<code class="sig-name descname">init_psi_so</code><span class="sig-paren">(</span><em class="sig-param">psi_so=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.init_psi_so" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize the nondimensionalized streamfunction passed from the Southern Ocean.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>psi_so</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Streamfunction in the adjoining Southern Ocean basin. Units:</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>psi_so(z, H)</strong> – If psi_so is specified as a function or array in depth space, returns the
-nondimensionalized Southern Ocean overturning streamfunction
-<span class="math notranslate nohighlight">\(\frac{\Psi_{SO}}{f\cdot H^3}\)</span> as a function of depth <span class="math notranslate nohighlight">\(z\)</span> and
-upper cell depth <span class="math notranslate nohighlight">\(H\)</span>. Otherwise, a function that simply returns 0.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.ode">
-<code class="sig-name descname">ode</code><span class="sig-paren">(</span><em class="sig-param">z</em>, <em class="sig-param">y</em>, <em class="sig-param">p=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.ode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the ordinary differential equation for the equilibrium column overturning streamfunction,
-to be solved as a boundary value problem:</p>
-<div class="math notranslate nohighlight">
-\[d_{zzzz}(\Psi_{N}) = (\kappa A)^{-1}(\Psi_{N} - \Psi_{SO} - A d_z(\kappa))d_{zzz}(\Psi_N)\]</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid on which to solve the ode. Units: m</p></li>
-<li><p><strong>y</strong> (<em>ndarray</em>) – Initial values for the streamfunction and its vertical gradient.</p></li>
-<li><p><strong>p</strong> (<em>ndarray</em>) – Initial guess for the unknown parameter, H, if not specified at model initialization. Units: m</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>ode</strong> – A vertically oriented array, containing the system of linear equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\partial_zy_1 &amp;= y_2 \\
-\partial_zy_2 &amp;= y_3 \\
-\partial_zy_3 &amp;= y_4 \\
-\partial_zy_4 &amp;= \alpha\left(z, H\right)\cdot y_4\left(y_1 - \Psi_{SO}\left(z, H\right)-\frac{A\cdot\partial_z\kappa\left(z, H\right)}{H^2}\right)
-\end{aligned}\end{split}\]</div>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Equi_Column.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Equi_Column.solve" title="Permalink to this definition">¶</a></dt>
-<dd><p>Solve for the thermal wind overturning streamfunction as a boundary value problem
-based on the system of equations defined in <a class="reference internal" href="#pymoc.modules.Equi_Column.ode" title="pymoc.modules.Equi_Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></a>.</p>
-</dd></dl>
-
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">alpha</span></code>(z, H)</p></td>
+<td><p>Calculate the nondimensional factor:</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bc</span></code>(ya, yb[, p])</p></td>
+<td><p>Calculate the boundary conditions for the equilibrium column boundary value problem.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bz</span></code>(H)</p></td>
+<td><p>Calculate the nondimenzionalized stratification at the bottom of the upper cell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_sol_init</span></code>(sol_init[, nz, b_bot])</p></td>
+<td><p>Initialize the initial guess for the solutions to the system of ordinary differential equations defined by <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_b_boundaries</span></code>(b_s[, b_bot, B_int])</p></td>
+<td><p>Initialize and set the nondimensionalize surface buoyance and bottom buoyance, or the abyssal buoyancy flux boundary condition if no bottom buoyancy is specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_dkappa_dz</span></code>(kappa[, dkappa_dz])</p></td>
+<td><p>Initialize the vertical diffusivity gradient profile.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_kappa</span></code>(kappa)</p></td>
+<td><p>Initialize the vertical diffusivity profile.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_psi_so</span></code>([psi_so])</p></td>
+<td><p>Initialize the nondimensionalized streamfunction passed from the Southern Ocean.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ode</span></code>(z, y[, p])</p></td>
+<td><p>Generate the ordinary differential equation for the equilibrium column overturning streamfunction, to be solved as a boundary value problem:</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>()</p></td>
+<td><p>Solve for the thermal wind overturning streamfunction as a boundary value problem based on the system of equations defined in <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Equi_Column.ode()</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -447,11 +302,19 @@ based on the system of equations defined in <a class="reference internal" href="
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, PyMOC Team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -462,7 +325,6 @@ based on the system of equations defined in <a class="reference internal" href="
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

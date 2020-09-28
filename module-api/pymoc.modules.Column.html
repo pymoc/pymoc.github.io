@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,15 +30,11 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pymoc.modules.Equi_Column" href="pymoc.modules.Equi_Column.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pymoc
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pymoc
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -100,6 +102,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -138,7 +141,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../module-api.html">Module API</a> &raquo;</li>
         
@@ -163,9 +166,9 @@
             
   <div class="section" id="pymoc-modules-column">
 <h1>pymoc.modules.Column<a class="headerlink" href="#pymoc-modules-column" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pymoc.modules.Column">
-<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Column</code><span class="sig-paren">(</span><em class="sig-param">z=None</em>, <em class="sig-param">kappa=None</em>, <em class="sig-param">bs=0.025</em>, <em class="sig-param">bbot=0.0</em>, <em class="sig-param">bzbot=None</em>, <em class="sig-param">b=0.0</em>, <em class="sig-param">Area=None</em>, <em class="sig-param">N2min=1e-07</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pymoc.modules.</code><code class="sig-name descname">Column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bs</span><span class="o">=</span><span class="default_value">0.025</span></em>, <em class="sig-param"><span class="n">bbot</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">bzbot</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">Area</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">N2min</span><span class="o">=</span><span class="default_value">1e-07</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vertical Advection-Diffusion Column Model</p>
 <p>Instances of this class represent 1D representations of buoyancy in a water
 column governed by vertical advection and diffusion. The velocity
@@ -189,175 +192,69 @@ into the column. This is, however, not (yet) implemented for the equilibrium sol
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="pymoc.modules.Column.Akappa">
-<code class="sig-name descname">Akappa</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.Akappa" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the area integrated diffusivity <span class="math notranslate nohighlight">\(A\kappa\)</span>
-at depth(s) z.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Vertical depth level(s) at which to retrieve the integrated diffusivity.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>AKappa</strong> – If z is a number, a number corresponding to the integrated diffusivity <span class="math notranslate nohighlight">\(A\kappa\)</span> at that depth.
-If z is an ndarray, an ndarray where each entry corresponds to the integrated diffusivity <span class="math notranslate nohighlight">\(A\kappa\)</span>
-at the z value with the same index.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float or ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.bc">
-<code class="sig-name descname">bc</code><span class="sig-paren">(</span><em class="sig-param">ya</em>, <em class="sig-param">yb</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.bc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the residuals of boundary conditions for the advective-diffusive
-boundary value problem.</p>
-<dl class="field-list simple">
+<dl class="py method">
+<dt id="pymoc.modules.Column.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kappa</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bs</span><span class="o">=</span><span class="default_value">0.025</span></em>, <em class="sig-param"><span class="n">bbot</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">bzbot</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">Area</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">N2min</span><span class="o">=</span><span class="default_value">1e-07</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ya</strong> (<em>ndarray</em>) – Bottom boundary condition. Units: m/s<sup>2</sup></p></li>
-<li><p><strong>yb</strong> (<em>ndarray</em>) – Surface boundary condition. Units: m/s<sup>2</sup></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>bc</strong> – If the bottom buoyancy stratification is defined as a boundary condition,
-an array containing the residuals of the imposed and calculated bottom buoyancy
-stratification and surface buoyancy.
-If the bottom buoyancy stratification is undefined as a boundary condition,
-an array containing the residuals of the imposed and calculated bottom buoyancy
-and surface buoyancy.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.convect">
-<code class="sig-name descname">convect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.convect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Carry out downward convective adustment of the vertical buoyancy profile to
-the minimum stratification, <span class="math notranslate nohighlight">\(N^2_{m\!i\!n}\)</span>. The current implimentation
-assumes a fixed buoyancy at the bottom of the convective region (to be interpreted
-as the minimum surfcae buoyancy).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.dAkappa_dz">
-<code class="sig-name descname">dAkappa_dz</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.dAkappa_dz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the area integrated diffusivity gradient <span class="math notranslate nohighlight">\(\partial_z\left(A\kappa\right)\)</span>
-at depth(s) z.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>z</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Vertical depth level(s) at which to retrieve the integrated diffusivity gradient.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>dAkappa_dz</strong> – If z is a number, a number corresponding to the ther vertical gradients
-in the integrated diffusivity <span class="math notranslate nohighlight">\(\partial_zA\kappa\)</span> at that depth.
-If z is an ndarray, an ndarray where each entry corresponds to the vertical gradient
-in the integrated diffusivity <span class="math notranslate nohighlight">\(\partial_zA\kappa\)</span> at the z value with the same index.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float or ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.horadv">
-<code class="sig-name descname">horadv</code><span class="sig-paren">(</span><em class="sig-param">vdx_in</em>, <em class="sig-param">b_in</em>, <em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.horadv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Carry out horizon buoyancy advection into the column model from an adjoining model,
-for the timestepping solution. This function implements an upwind advection scheme.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>vdx_in</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Total advective transport per unit height into the column for the timestepping
-solution. Positive values indicate transport into the column. Units: m<sup>2</sup>/s</p></li>
-<li><p><strong>b_in</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Buoyancy vales from the adjoining module for the timestepping solution. Units: m/s<sup>2</sup></p></li>
-<li><p><strong>dt</strong> (<em>int</em>) – Numerical timestep over which solution are iterated. Units: s</p></li>
+<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid. Units: m</p></li>
+<li><p><strong>kappa</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Vertical diffusivity profile. Units: m<sup>2</sup>/s</p></li>
+<li><p><strong>bs</strong> (<em>float</em>) – Surface level buoyancy boundary condition. Units: m/s<sup>2</sup></p></li>
+<li><p><strong>bbot</strong> (<em>float; optional</em>) – Bottom level buoyancy boundary condition. Units: m/s<sup>2</sup></p></li>
+<li><p><strong>bzbot</strong> (<em>float; optional</em>) – Bottom level buoyancy stratification. Can be used as an alternative to <strong>bbot</strong>. Units: s<sup>-2</sup></p></li>
+<li><p><strong>b</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Initial vertical buoyancy profile. Recalculated on model run. Units: m/s</p></li>
+<li><p><strong>Area</strong> (<em>float</em><em>, </em><em>function</em><em>, or </em><em>ndarray</em>) – Horizontal area of basin. Units: m<sup>2</sup></p></li>
+<li><p><strong>N2min</strong> (<em>float; optional</em>) – Minimum stratification for convective adjustment. Units: s<sup>-1</sup></p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="pymoc.modules.Column.ode">
-<code class="sig-name descname">ode</code><span class="sig-paren">(</span><em class="sig-param">z</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.ode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the ordinary differential equation for the equilibrium buoyancy profile,
-to be solved as a boundary value problem:</p>
-<p><span class="math notranslate nohighlight">\(\partial_tb\left(z\right)=-w^\dagger\partial_zb+\partial_z\left(\kappa_{e\!f\!f}\partial_zb\right)\)</span></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<em>ndarray</em>) – Vertical depth levels of column grid on which to solve the ode. Units: m</p></li>
-<li><p><strong>y</strong> (<em>ndarray</em>) – Initial values for buoyancy and buoyancy gradient profiles.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>ode</strong> – A vertically oriented array, containing the system of linear equations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\partial_zy_1 &amp;= y_2 \\
-\partial_zy_2 &amp;= wA - \partial_zy_2\cdot\frac{\partial_zA\kappa}{A\kappa}
-\end{aligned}\end{split}\]</div>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>ndarray</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Akappa</span></code>(z)</p></td>
+<td><p>Compute the area integrated diffusivity <span class="math notranslate nohighlight">\(A\kappa\)</span> at depth(s) z.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pymoc.modules.Column.__init__" title="pymoc.modules.Column.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([z, kappa, bs, bbot, bzbot, b, …])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param z</dt>
+<dd class="field-odd"><p>Vertical depth levels of column grid. Units: m</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.solve_equi">
-<code class="sig-name descname">solve_equi</code><span class="sig-paren">(</span><em class="sig-param">wA</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.solve_equi" title="Permalink to this definition">¶</a></dt>
-<dd><p>Solve for the equilibrium buoyancy profile, given a specified vertical
-velocity profile, and pre-set surface and bottom boundary conditions, based
-on the system of equations defined by <a class="reference internal" href="#pymoc.modules.Column.ode" title="pymoc.modules.Column.ode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Column.ode()</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>wA</strong> (<em>ndarray</em>) – Area integrated velocity profile for the equilibrium solution. Units: m<sup>3</sup>/s</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.timestep">
-<code class="sig-name descname">timestep</code><span class="sig-paren">(</span><em class="sig-param">wA=0.0</em>, <em class="sig-param">dt=1.0</em>, <em class="sig-param">do_conv=False</em>, <em class="sig-param">vdx_in=None</em>, <em class="sig-param">b_in=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.timestep" title="Permalink to this definition">¶</a></dt>
-<dd><p>Carry out one timestep integration for the buoyancy profile, accounting
-for advective, diffusive, and convective effects.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>wA</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Area integrated velocity profile for the timestepping solution. Units: m<sup>3</sup>/s</p></li>
-<li><p><strong>dt</strong> (<em>int</em>) – Numerical timestep over which solution are iterated. Units: s</p></li>
-<li><p><strong>do_conv</strong> (<em>logical</em>) – Whether to carry out convective adjustment during model integration.</p></li>
-<li><p><strong>vdx_in</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Total advective transport per unit height into the column for the timestepping
-solution. Positive values indicate transport into the column. Units: m<sup>2</sup>/s</p></li>
-<li><p><strong>b_in</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Buoyancy vales from the adjoining module for the timestepping solution. Units: m/s<sup>2</sup></p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="pymoc.modules.Column.vertadvdiff">
-<code class="sig-name descname">vertadvdiff</code><span class="sig-paren">(</span><em class="sig-param">wA</em>, <em class="sig-param">dt</em>, <em class="sig-param">do_conv=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pymoc.modules.Column.vertadvdiff" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate and apply the forcing from advection and diffusion on the vertical buoyancy
-profile, for the timestepping solution. This function implements an upwind advection
-scheme.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>wA</strong> (<em>float</em><em> or </em><em>ndarray</em>) – Area integrated velocity profile for the timestepping solution. Units: m<sup>3</sup>/s</p></li>
-<li><p><strong>dt</strong> (<em>int</em>) – Numerical timestep over which solution are iterated. Units: s</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bc</span></code>(ya, yb)</p></td>
+<td><p>Calculate the residuals of boundary conditions for the advective-diffusive boundary value problem.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convect</span></code>()</p></td>
+<td><p>Carry out downward convective adustment of the vertical buoyancy profile to the minimum stratification, <span class="math notranslate nohighlight">\(N^2_{m\!i\!n}\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dAkappa_dz</span></code>(z)</p></td>
+<td><p>Compute the area integrated diffusivity gradient <span class="math notranslate nohighlight">\(\partial_z\left(A\kappa\right)\)</span> at depth(s) z.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">horadv</span></code>(vdx_in, b_in, dt)</p></td>
+<td><p>Carry out horizon buoyancy advection into the column model from an adjoining model, for the timestepping solution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ode</span></code>(z, y)</p></td>
+<td><p>Generate the ordinary differential equation for the equilibrium buoyancy profile, to be solved as a boundary value problem:</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_equi</span></code>(wA)</p></td>
+<td><p>Solve for the equilibrium buoyancy profile, given a specified vertical velocity profile, and pre-set surface and bottom boundary conditions, based on the system of equations defined by <code class="xref py py-meth docutils literal notranslate"><span class="pre">pymoc.modules.Column.ode()</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestep</span></code>([wA, dt, do_conv, vdx_in, b_in])</p></td>
+<td><p>Carry out one timestep integration for the buoyancy profile, accounting for advective, diffusive, and convective effects.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertadvdiff</span></code>(wA, dt[, do_conv])</p></td>
+<td><p>Calculate and apply the forcing from advection and diffusion on the vertical buoyancy profile, for the timestepping solution.</p></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -382,11 +279,19 @@ scheme.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, PyMOC Team
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -397,7 +302,6 @@ scheme.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

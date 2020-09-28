@@ -1,6 +1,31 @@
-pymoc.modules.Column
+﻿pymoc.modules.Column
 ====================
 
 .. currentmodule:: pymoc.modules
+
 .. autoclass:: Column
-  :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Column.Akappa
+      ~Column.__init__
+      ~Column.bc
+      ~Column.convect
+      ~Column.dAkappa_dz
+      ~Column.horadv
+      ~Column.ode
+      ~Column.solve_equi
+      ~Column.timestep
+      ~Column.vertadvdiff
+   
+   
+
+   
+   
+   

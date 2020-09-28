@@ -1,7 +1,31 @@
-pymoc.modules.Psi\_SO
+﻿pymoc.modules.Psi\_SO
 =====================
 
 .. currentmodule:: pymoc.modules
+
 .. autoclass:: Psi_SO
-  :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Psi_SO.__init__
+      ~Psi_SO.bc_GM
+      ~Psi_SO.calc_Ekman
+      ~Psi_SO.calc_GM
+      ~Psi_SO.calc_N2
+      ~Psi_SO.calc_bottom_taper
+      ~Psi_SO.calc_top_taper
+      ~Psi_SO.solve
+      ~Psi_SO.update
+      ~Psi_SO.ys
+   
+   
+
+   
+   
    
